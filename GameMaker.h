@@ -11,5 +11,6 @@
 #include "GameManager/WindowManager.h"
 #include "GameObjects/GameObject.h"
 #include "GameObjects/PhysicsObject/PhysicsObject.h"
+#include "GameObjects/TextObject/TextObject.h"
 #include "GraphicsManager/Graphics.h"
 #include "Types.h"

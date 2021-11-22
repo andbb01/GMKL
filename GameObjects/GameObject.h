@@ -1,7 +1,3 @@
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <cstdlib>
-#include <cmath>
 #include "../Types.h"
 
 #ifndef GAMOBJ_CONTR

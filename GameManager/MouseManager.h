@@ -1,4 +1,3 @@
-#include <SDL2/SDL.h>
 #include "../Types.h"
 #include "../GameObjects/GameObject.h"
 #ifndef MOUS_CONTR

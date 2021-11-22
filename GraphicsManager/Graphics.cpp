@@ -4,6 +4,7 @@
 Graphics::Graphics(){
   SDL_Init(SDL_INIT_EVERYTHING);
   IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+  TTF_Init();
   this->delay = STD_DELAY;
 }
 
@@ -37,6 +38,9 @@ SDL_Renderer *Graphics::externUpdate(){
   return ren;
 }
 
+
+
+
 void Graphics::drawObject(GameObject obj){
     SDL_Rect tmp_pos;
     tmp_pos = obj.getObjPosition().toSDL();
@@ -47,6 +51,13 @@ void Graphics::drawObject(GameObject obj, int r, int g, int b){
   this->setDrawingColor(r, g, b);
   SDL_Rect tmp = obj.getObjPosition().toSDL();
   SDL_RenderFillRect(this->ren, &tmp);
+}
+
+ void Graphics::drawTextObject(TextObject obj){
+  this->drawObject(obj);
+  SDL_Rect tmp_pos;
+  tmp_pos = obj.getObjPosition().toSDL();
+  SDL_RenderCopyEx(ren, obj.getObjFontSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
 }
 
 void Graphics::drawPoint(Point p){
@@ -60,12 +71,27 @@ void Graphics::drawRect(Rect r){
 }
 
 
-void Graphics::setObjSprite(const char *fileName, GameObject *obj){
+void Graphics::setObjSprite(std::string fileName, GameObject *obj){
   SDL_Surface *sur;
-  sur = IMG_Load(fileName);
+  sur = IMG_Load(fileName.c_str());
   obj->setTexture(SDL_CreateTextureFromSurface(ren, sur));
 
   free(sur);
+}
+
+void Graphics::setObjFontSprite(TextObject *obj, unsigned char r, unsigned  char g, unsigned char b){
+  TTF_Font *font;
+  SDL_Color c = {r, g, b, SDL_ALPHA_OPAQUE};
+  SDL_Surface *sur;
+  
+  font = TTF_OpenFont(obj->getCurrentFont().c_str(), obj->getObjPosition().h);
+
+  sur = TTF_RenderText_Solid(font, obj->getTxt().c_str(), c);
+
+  obj->setFontTexture(SDL_CreateTextureFromSurface(ren, sur));
+
+  SDL_FreeSurface(sur);
+  TTF_CloseFont(font);
 }
 
 Graphics::~Graphics(){
