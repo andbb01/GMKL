@@ -11,6 +11,7 @@ Graphics::Graphics(){
 Graphics::Graphics(int delay){
   SDL_Init(SDL_INIT_EVERYTHING);
   IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+  TTF_Init();
   this->delay = delay;
 }
 
@@ -38,9 +39,6 @@ SDL_Renderer *Graphics::externUpdate(){
   return ren;
 }
 
-
-
-
 void Graphics::drawObject(GameObject obj){
     SDL_Rect tmp_pos;
     tmp_pos = obj.getObjPosition().toSDL();
@@ -54,7 +52,7 @@ void Graphics::drawObject(GameObject obj, int r, int g, int b){
 }
 
  void Graphics::drawTextObject(TextObject obj){
-  this->drawObject(obj);
+   this->drawObject(obj);
   SDL_Rect tmp_pos;
   tmp_pos = obj.getObjPosition().toSDL();
   SDL_RenderCopyEx(ren, obj.getObjFontSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
@@ -84,7 +82,7 @@ void Graphics::setObjFontSprite(TextObject *obj, unsigned char r, unsigned  char
   SDL_Color c = {r, g, b, SDL_ALPHA_OPAQUE};
   SDL_Surface *sur;
   
-  font = TTF_OpenFont(obj->getCurrentFont().c_str(), obj->getObjPosition().h);
+  font = TTF_OpenFont(obj->getCurrentFont().c_str(), obj->getObjPosition().w / obj->getTxt().length());
 
   sur = TTF_RenderText_Solid(font, obj->getTxt().c_str(), c);
 
