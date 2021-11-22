@@ -51,8 +51,8 @@ void Graphics::drawObject(GameObject obj, int r, int g, int b){
   SDL_RenderFillRect(this->ren, &tmp);
 }
 
- void Graphics::drawTextObject(TextObject obj){
-   this->drawObject(obj);
+ void Graphics::drawObject(TextObject obj){
+   this->drawObject((GameObject)obj);
   SDL_Rect tmp_pos;
   tmp_pos = obj.getObjPosition().toSDL();
   SDL_RenderCopyEx(ren, obj.getObjFontSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
@@ -77,7 +77,7 @@ void Graphics::setObjSprite(std::string fileName, GameObject *obj){
   free(sur);
 }
 
-void Graphics::setObjFontSprite(TextObject *obj, unsigned char r, unsigned  char g, unsigned char b){
+void Graphics::setObjSprite(TextObject *obj, unsigned char r, unsigned  char g, unsigned char b){
   TTF_Font *font;
   SDL_Color c = {r, g, b, SDL_ALPHA_OPAQUE};
   SDL_Surface *sur;

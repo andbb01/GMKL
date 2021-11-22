@@ -22,9 +22,9 @@ class Graphics{
     void drawRect(Rect r);
     void drawObject(GameObject obj);
     void drawObject(GameObject obj, int r, int g, int b);
-    void drawTextObject(TextObject obj);
+    void drawObject(TextObject obj);
     void setObjSprite(std::string fileName, GameObject *obj);
-    void setObjFontSprite(TextObject *obj, unsigned char r, unsigned char g, unsigned char b);
+    void setObjSprite(TextObject *obj, unsigned char r, unsigned char g, unsigned char b);
     SDL_Renderer *externUpdate();
     ~Graphics();
 };
