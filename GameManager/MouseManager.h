@@ -23,6 +23,14 @@ class MouseManager{
                 return true;
             return false;
         }
+        static int mouseWheel(){
+            SDL_Event ev;
+            SDL_PollEvent(&ev);
+            if (ev.type == SDL_MOUSEWHEEL){
+               return ev.wheel.y;
+            }
+            return 0;
+        }
 };
 
 #endif

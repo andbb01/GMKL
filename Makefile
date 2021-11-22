@@ -21,7 +21,8 @@ BuildGMKL:
 	ar -rc libGMKL.a *.o
 
 InfoGMKL:
-	wc $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(GO) $(GrM) $(BoBJ)
+	tree
+	wc $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(GO) $(GrM) $(BoBJ) $(PhY)
 
 ClearCompilation:
 	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch
