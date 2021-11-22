@@ -2,8 +2,15 @@
 
 #ifndef KY_CNTR
 
+/**
+ * Classe di gestione degli input da tastiera permette di leggere numeri e lettere inserite dall'utente
+ * (Per i valori di key si possono utilizzare le lettere e i numeri scritti come carattere o le shortcut di SDL)
+ */
 class KeyboardManager{
   public:
+    /**
+     * Restituisce lo stato del pulsante della tastiera, true se premuto, false altrimenti
+     */
     static bool keyState(int key){
       if (key > '0' && key <= '9' ){
         key -= '1' - SDL_SCANCODE_1;

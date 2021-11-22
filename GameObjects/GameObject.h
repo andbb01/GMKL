@@ -44,16 +44,46 @@ protected:
      *  dell'oggetto
      */
     Rect getObjPosition();
+    /**
+     * Restituisce l'angolo di rotazione dell'oggetto, angolo solo grafico, collisioni e tutto il resto vengono comunque calcolate rispetto al rettangolo non ruotato
+     */
     double getObjAngle();
+    /**
+     * Mouve l'oggetto di vx sull'asse x e di vy sull'asse y
+     */
     void objMove(int vx, int vy);
+    /**
+     * Mouve l'oggetto dei valori di val in quell'istante
+     */
     void objMove();
+    /**
+     * Setta di valori di vel a (xvel, yvel)
+     */
     void objSetVelocity(int xvel, int yvel);
+    /**
+     * Sposta l'oggetto nel punto (x,y) (teletrasporta)
+     */
     void objTransport(int x, int y);
+    /**
+     * Ruota l'oggetto del valore di angle
+     */
     void objRotate(double angle);
+    /**
+     * Ruota l'oggetto del valore di angle_vel
+     */
     void objRotate();
-    void setTexture(SDL_Texture *t);
-    void setObjSprite(const char *filename, SDL_Renderer *ren);
+    /**
+     * Imposta angle_vel al valore di w
+     */
     void objSetAngVelocity(double w);
+    /**
+     * Imposta la texture dell'oggetto, solitamento chiamato indipendentemente dal metodo setObjSprite della classe Graphics
+     */
+    void setTexture(SDL_Texture *t);
+    /**
+     * Imposta la sprite dell'oggetto internamente ad esso (sconsigliato), per il parametro ren solitamente usato il metodo externUpdate della classe Graphics
+     */
+    void setObjSprite(const char *filename, SDL_Renderer *ren);
 };
 
 #endif

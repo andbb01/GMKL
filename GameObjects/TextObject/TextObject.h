@@ -9,8 +9,17 @@
 
 class TextObject : public GameObject{
     private:
+        /**
+         * Testo del box
+         */
         std::string text;
+        /**
+         * Percorso del font utilizzato (relativo o assoluto)
+         */
         std::string fontName;
+        /**
+         * Texture per la rappresentazione del testo, generata automaticamente dal metodo setObjSprite di Graphics
+         */
         SDL_Texture *font_tex;
     public:
         /**
@@ -29,13 +38,28 @@ class TextObject : public GameObject{
             this->text = text;
             fontName = "fonts/arial.ttf";
         }
+        /**
+         * Costruttore della classe con font di default "font/arial.ttf" e testo vuoto
+         */
         TextObject(int x, int y, int w, int h) : GameObject(x, y, w, h){
             this->text = "";
             this->fontName = "fonts/arial.ttf";
         }
+        /**
+         * Restituisce il testo della della casella di testo
+         */
         std::string getTxt();
+        /**
+         * Restituisce il percorso del font attualmente attivo nella classe
+         */
         std::string getCurrentFont();
+        /**
+         * Imposta la texture per la scrittura del testo, solitamente chiamato indipendentemente dal metodo setObjSprite della classe Graphics
+         */
         void setFontTexture(SDL_Texture *t);
+        /**
+         * Restituisce l'attuale texture dell'oggetto, solitamente chiamato automaticamente dal metodo drawObject della classe Graphics
+         */
         SDL_Texture *getObjFontSprite();
 };
 

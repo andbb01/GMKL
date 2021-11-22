@@ -2,29 +2,32 @@
 
 #ifndef WIN_CNTR
 
+/**
+ * Classe per la gestione dei principali eventi che influenzano la finestra
+ * (in fase iniziale)
+ */
 class WindowManager{
-  private:
-    SDL_Event event;
   public:
-    void updateEvents(){
+    /**
+     * Verifica se è stato premuto il tasto chiudi sulla finestra
+     */
+    static bool exitEvent(){
+      SDL_Event event;
       SDL_PollEvent(&event);
-    }
-
-    bool exitEvent(){
       if (event.type == SDL_QUIT)
         return true;
       return false;
     }
 
-
-    bool actionState(int ev){
+    /**
+     * Verifica se un qualsiasi evento si è verificato (per i codici degli eventi vedere la documentazione SDL)
+     */
+    static bool actionState(int ev){
+      SDL_Event event;
+      SDL_PollEvent(&event);
       if (ev == event.type)
         return true;
       return false;
-    }
-
-    void setEvent(int ev){
-      event.type = ev;
     }
 };
 

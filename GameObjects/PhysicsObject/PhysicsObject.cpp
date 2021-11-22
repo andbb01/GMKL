@@ -1,9 +1,4 @@
 #include "PhysicsObject.h"
-/*
-  App SDL_Point è misurato da un sistema di riferimento solidale al centro di massa (baricentro)
-  Nota: si utilizza deltat = 20 ms per una quantizzazione della
-  grafica di 120 ms
-  */
 
 void PhysicsObject::addForce(float F, Point appPoint){
   double Icm, I_app, w;
