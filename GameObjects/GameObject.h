@@ -31,9 +31,13 @@ protected:
     SDL_Texture *tex;
   public:
     /**
-     *  Costruttore senza classi particolari, position con (x, y, w, h) e tutto il resto a NULL
+     *  Costruttore imposta position a (x, y, w, h) e tutto il resto a NULL
      */
     GameObject(int x, int y, int w, int h);
+    /**
+     *  Costruttore di default tutto a 0 o NULL
+     */
+    GameObject();
     /**
      *  Costruttore inizializza this->position e tutto il resto a NULL
      */
@@ -61,9 +65,13 @@ protected:
      */
     void objSetVelocity(int xvel, int yvel);
     /**
-     * Sposta l'oggetto nel punto (x,y) (teletrasporta)
+     * Imposta la posizione dell'oggetto al punto (x, y)
      */
-    void objTransport(int x, int y);
+    void setObjPosition(int x, int y);
+    /**
+     * Imposta la posizione dell'oggetto al punto p
+     */
+    void setObjPosition(Point p);
     /**
      * Ruota l'oggetto del valore di angle
      */
@@ -84,6 +92,10 @@ protected:
      * Imposta la sprite dell'oggetto internamente ad esso (sconsigliato), per il parametro ren solitamente usato il metodo externUpdate della classe Graphics
      */
     void setObjSprite(std::string filename, SDL_Renderer *ren);
+    /**
+     * Imposta la dimensione dell'oggetto
+     */
+    void setObjSize(int w, int h);
 };
 
 #endif

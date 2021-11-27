@@ -25,4 +25,6 @@ typedef SDL_Color Color;
 
 #define TYPES_CNTR 1
 
+#define DEF_NEAR_DIST 10
+
 #endif

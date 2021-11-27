@@ -55,6 +55,16 @@ class MouseManager{
             }
             return 0;
         }
+
+        static bool nearPoint(Point p, int max_distance){
+            if (p.distance(MouseManager::getPosition()) < max_distance)
+                return true;
+            return false;
+        }
+
+        static bool nearPoint(Point p){
+            return MouseManager::nearPoint(p, DEF_NEAR_DIST);
+        }
 };
 
 #endif

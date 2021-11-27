@@ -7,6 +7,8 @@ GameObject::GameObject(int x, int y, int w, int h){
   this->tex = NULL;
 }
 
+GameObject::GameObject() : GameObject(0,0,0,0){}
+
 GameObject::GameObject(Rect position){
   this->position = position;
   this->tex = NULL;
@@ -47,9 +49,13 @@ void GameObject::objSetVelocity(int xvel, int yvel){
   this->vel.y = yvel;
 }
 
-void GameObject::objTransport(int x, int y){
+void GameObject::setObjPosition(int x, int y){
   this->position.v1.x = x;
   this->position.v1.y = y;
+}
+
+void GameObject::setObjPosition(Point p){
+  this->setObjPosition(p.x, p.y);
 }
 
 void GameObject::objRotate(double angle){
@@ -66,4 +72,9 @@ void GameObject::objSetAngVelocity(double w){
 
 double GameObject::getObjAngle(){
   return this->angle;
+}
+
+void GameObject::setObjSize(int w, int h){
+  this->position.w = w;
+  this->position.h = h;
 }

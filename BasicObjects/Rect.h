@@ -17,9 +17,13 @@ class Rect{
      */
     Point v1;
     /**
-     * Larghezza (width) e altezza (length) del rettangolo
+     * Larghezza (width) del rettangolo
      */
-    int w,h;
+    int w;
+    /**
+     * Altezza (height) del rettangolo
+     */
+    int h;
     /**
      * Inizializza tutte le dimensioni al valore inserito (x, y) sono il punto v1
      */
