@@ -83,7 +83,7 @@ protected:
     /**
      * Imposta la sprite dell'oggetto internamente ad esso (sconsigliato), per il parametro ren solitamente usato il metodo externUpdate della classe Graphics
      */
-    void setObjSprite(const char *filename, SDL_Renderer *ren);
+    void setObjSprite(std::string filename, SDL_Renderer *ren);
 };
 
 #endif

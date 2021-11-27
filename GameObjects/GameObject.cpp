@@ -24,9 +24,9 @@ void GameObject::setTexture(SDL_Texture *t){
   this->tex = t;
 }
 
-void GameObject::setObjSprite(const char *filename, SDL_Renderer *ren){
+void GameObject::setObjSprite(std::string filename, SDL_Renderer *ren){
   SDL_Surface *sur;
-  sur = IMG_Load(filename);
+  sur = IMG_Load(filename.c_str());
   this->tex = SDL_CreateTextureFromSurface(ren, sur);
 
   free(sur);

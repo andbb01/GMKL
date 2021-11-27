@@ -22,6 +22,7 @@ void Graphics::createWindow(int w, int h){
 }
 
 void Graphics::setBackgroundColor(int r, int g, int b){
+  SDL_RenderClear(ren);
   this->setDrawingColor(r,g,b);
   SDL_RenderClear(ren);
 }
@@ -71,18 +72,43 @@ void Graphics::drawRect(Rect r){
 
 void Graphics::setObjSprite(std::string fileName, GameObject *obj){
   SDL_Surface *sur;
+
   sur = IMG_Load(fileName.c_str());
   obj->setTexture(SDL_CreateTextureFromSurface(ren, sur));
 
-  free(sur);
+  SDL_FreeSurface(sur);
 }
 
-void Graphics::setObjSprite(TextObject *obj, unsigned char r, unsigned  char g, unsigned char b){
-  TTF_Font *font;
-  SDL_Color c = {r, g, b, SDL_ALPHA_OPAQUE};
+void Graphics::setObjSprite(std::string fileName, TextObject *obj){
   SDL_Surface *sur;
-  
-  font = TTF_OpenFont(obj->getCurrentFont().c_str(), obj->getObjPosition().w / obj->getTxt().length());
+  TTF_Font *font;
+  SDL_Color c;
+  c = obj->getColor();
+  c.a = SDL_ALPHA_OPAQUE;
+
+  font = TTF_OpenFont(obj->getCurrentFont().c_str(), 1000);
+
+  sur = TTF_RenderText_Solid(font, obj->getTxt().c_str(), c);
+
+  obj->setFontTexture(SDL_CreateTextureFromSurface(ren, sur));
+
+  SDL_FreeSurface(sur);
+  TTF_CloseFont(font);
+
+  sur = IMG_Load(fileName.c_str());
+  obj->setTexture(SDL_CreateTextureFromSurface(ren, sur));
+
+  SDL_FreeSurface(sur);
+}
+
+void Graphics::setObjSprite(TextObject *obj){
+  SDL_Surface *sur;
+  TTF_Font *font;
+  SDL_Color c;
+  c = obj->getColor();
+  c.a = SDL_ALPHA_OPAQUE;
+
+  font = TTF_OpenFont(obj->getCurrentFont().c_str(), 1000);
 
   sur = TTF_RenderText_Solid(font, obj->getTxt().c_str(), c);
 

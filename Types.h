@@ -7,11 +7,16 @@
 #include <cstdlib>
 #include <cmath>
 
+typedef SDL_Color Color;
+
 #ifndef TYPES_CNTR
 
-#define STD_DELAY 40
-#define WIN_CLOSE SDL_QUIT
+#define STD_DELAY   40
+#define WIN_CLOSE   SDL_QUIT
 #define KEY_ESC SDL_SCANCODE_ESCAPE
+#define KEY_DELETE  SDLK_DELETE
+#define KEY_ENTER   SDL_SCANCODE_RETURN
+#define KEY_SPACE   SDL_SCANCODE_SPACE
 
 #define MOUSE_RIGHT SDL_BUTTON_RMASK
 #define MOUSE_LEFT  SDL_BUTTON_LMASK

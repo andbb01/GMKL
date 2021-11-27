@@ -36,6 +36,15 @@ class MouseManager{
             return false;
         }
         /**
+         * Controlla se il mouse è all'interno di un box (rettangolo)
+         */
+        static bool inBox(Rect r){
+            Point m = MouseManager::getPosition();
+            if (r.contained(m))
+                return true;
+            return false;
+        }
+        /**
          * Metodo per la gestione dello scroll del mouse restituisce 1, 0 o -1 in funzione della direzione della rotazione della rondella
          */
         static int mouseWheel(){

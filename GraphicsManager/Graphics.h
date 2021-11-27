@@ -39,7 +39,7 @@ class Graphics{
      */
     void createWindow(int w, int h);
     /**
-     * Imposta il colore di background ad rgb
+     * Imposta il colore di background ad rgb e "pulisce" la finestra
      */
     void setBackgroundColor(int r, int g, int b);
     /**
@@ -75,10 +75,13 @@ class Graphics{
      */
     void setObjSprite(std::string fileName, GameObject *obj);
     /**
-     * Imposta le texture di un oggetto con testo considerando sia sfondo che testo attualmente attivo
-     * Cambiando il testo sarà necessario chiamare nuovamente questo metodo
+     * Imposta la texture grafica di un oggetto di testo, permette di disegnare si il testo che lo sfondo (filename)
      */
-    void setObjSprite(TextObject *obj, unsigned char r, unsigned char g, unsigned char b);
+    void setObjSprite(std::string fileName, TextObject *obj);
+    /**
+     * Imposta la texture grafica di un oggetto di testo senza aggiornare la texture di sfondo
+     */
+    void setObjSprite(TextObject *obj);
     /**
      * Utilizzo consigliato solo se si comprende abbastanza bene la libreria SDL
      * restituisce il render della finestra per permettere di effettuare operazioni esternamente alla classe

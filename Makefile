@@ -30,7 +30,7 @@ ClearCompilation:
 	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
 
 All:
-	$(compiler) $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H)
-	$(compiler) -c $(GO) $(GrM) $(BoBJ) $(PhY) $(LIBS)
+	$(compiler) $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
+	$(compiler) -c $(GO) $(GrM) $(BoBJ) $(PhY) $(TXT) $(LIBS)
 	ar -rc libGMKL.a *.o
 	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
