@@ -7,6 +7,10 @@
 #include <cstdlib>
 #include <cmath>
 
+/** @file
+ * Include tutte gli header delle librerie esterne utilizzate da GMKL e le definizioni di alcune costanti 
+ */
+
 typedef SDL_Color Color;
 
 #ifndef TYPES_CNTR
@@ -23,8 +27,8 @@ typedef SDL_Color Color;
 #define MOUSE_MIDDLE SDL_BUTTON_MMASK
 #define MOUSE_X2 SDL_BUTTON_X2MASK
 
-#define TYPES_CNTR 1
-
 #define DEF_NEAR_DIST 10
 
 #endif
+
+#define TYPES_CNTR 1
