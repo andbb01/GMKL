@@ -15,6 +15,8 @@ BoBJ_H = BasicObjects/*.h
 LIBS = -lSDL2 -lSDL2_image -lSDL2_ttf
 compiler = g++
 
+VERSION = 0.1.1
+
 CompileGMKL:
 	$(compiler) $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
 	$(compiler) -c $(GO) $(GrM) $(BoBJ) $(PhY) $(TXT) $(LIBS)
@@ -36,4 +38,4 @@ All:
 	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
 
 CreateDistro:
-	zip libGMKL.zip ../GMKL-Documentation/latex/refman.pdf libGMKL.a $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
+	zip libGMKL-$(VERSION).zip ../GMKL-Documentation/latex/refman.pdf libGMKL.a $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
