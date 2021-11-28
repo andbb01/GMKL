@@ -78,3 +78,7 @@ void GameObject::setObjSize(int w, int h){
   this->position.w = w;
   this->position.h = h;
 }
+    
+Point GameObject::getObjVelocity(){
+  return this->vel;
+}

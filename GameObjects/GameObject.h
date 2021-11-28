@@ -96,6 +96,10 @@ protected:
      * Imposta la dimensione dell'oggetto
      */
     void setObjSize(int w, int h);
+    /**
+     * Restituisce il vettore velocità (Point) dell'oggetto
+     */
+     Point getObjVelocity();
 };
 
 #endif
