@@ -17,6 +17,12 @@ class PhysicsObject : public GameObject{
     float mass;
   public:
     /**
+     * Costruttore di default tutto a zero tranne la massa che va a 1
+     */
+    PhysicsObject() : GameObject(){
+      this->mass = 1;
+    }
+    /**
      * Estende il costruttore di GameObject aggiungendo il parametro massa
      */
     PhysicsObject(int x, int y, int w, int h, float m) : GameObject(x, y, w, h){
@@ -40,6 +46,10 @@ class PhysicsObject : public GameObject{
      * restituisce un punto con x e y negativi (fuori del piano considerato)
      */
     Point trackCollision(PhysicsObject other);
+    /**
+     * Modifica la massa dell'oggetto (usare cautamente)
+     */
+    void setObjMass(float m);
 };
 
 #endif

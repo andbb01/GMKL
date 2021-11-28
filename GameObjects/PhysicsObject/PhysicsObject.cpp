@@ -33,3 +33,7 @@ Point PhysicsObject::trackCollision(PhysicsObject other){
 
   return collisionPoint;
 }
+
+void PhysicsObject::setObjMass(float m){
+  this->mass = m;
+}
