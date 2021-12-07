@@ -14,7 +14,7 @@ BoBJ_H = BasicObjects/*.h
 
 compiler = g++
 
-VERSION = 0.1.2
+VERSION = 0.1.3
 
 CompileGMKL:
 	$(compiler) $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
