@@ -12,14 +12,13 @@ GM_H = GameManager/*.h
 H = *.h
 BoBJ_H = BasicObjects/*.h
 
-LIBS = -lSDL2 -lSDL2_image -lSDL2_ttf
 compiler = g++
 
 VERSION = 0.1.2
 
 CompileGMKL:
 	$(compiler) $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
-	$(compiler) -c $(GO) $(GrM) $(BoBJ) $(PhY) $(TXT) $(LIBS)
+	$(compiler) -c $(GO) $(GrM) $(BoBJ) $(PhY) $(TXT)
 
 BuildGMKL:
 	ar -rc libGMKL.a *.o
@@ -32,11 +31,10 @@ ClearCompilation:
 	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
 
 All:
-	$(compiler) $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)
-	$(compiler) -c $(GO) $(GrM) $(BoBJ) $(PhY) $(TXT) $(LIBS)
-	ar -rc libGMKL.a *.o
-	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
-
+	make CompileGMKL
+	make BuildGMKL
+	make ClearCompilation
+	
 CreateDistro:
 	rm libGMKL-*.zip
 	zip libGMKL-$(VERSION).zip libGMKL.a $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(TXT_H)

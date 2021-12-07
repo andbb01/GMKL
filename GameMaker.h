@@ -14,6 +14,7 @@
 
 #include "GameManager/MouseManager.h"
 #include "GameManager/WindowManager.h"
+#include "GameManager/AudioManager.h"
 #include "GameObjects/GameObject.h"
 #include "GameObjects/PhysicsObject/PhysicsObject.h"
 #include "GameObjects/TextObject/TextObject.h"

@@ -63,10 +63,6 @@ class Graphics{
      */
     void drawObject(GameObject obj);
     /**
-     * Disegna un oggetto con texture nulla (o non) sotto forma di rettangolo di colore rgb 
-     */
-    void drawObject(GameObject obj, int r, int g, int b);
-    /**
      * Disegna un TextObject considerando eventuale texture di sfondo e testo sopra scritto
      */
     void drawObject(TextObject obj);

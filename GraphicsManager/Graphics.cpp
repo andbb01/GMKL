@@ -43,13 +43,10 @@ SDL_Renderer *Graphics::externUpdate(){
 void Graphics::drawObject(GameObject obj){
     SDL_Rect tmp_pos;
     tmp_pos = obj.getObjPosition().toSDL();
-    SDL_RenderCopyEx(ren, obj.getObjSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
-}
-
-void Graphics::drawObject(GameObject obj, int r, int g, int b){
-  this->setDrawingColor(r, g, b);
-  SDL_Rect tmp = obj.getObjPosition().toSDL();
-  SDL_RenderFillRect(this->ren, &tmp);
+    if (obj.getObjSprite() != NULL)
+      SDL_RenderCopyEx(ren, obj.getObjSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
+    else
+      SDL_RenderFillRect(this->ren, &tmp_pos);
 }
 
  void Graphics::drawObject(TextObject obj){
