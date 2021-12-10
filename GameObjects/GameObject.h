@@ -29,6 +29,10 @@ protected:
      * viene utilizzata dai metodi drawObject
      */
     SDL_Texture *tex;
+    /**
+     * Se si utilizza una sequenza di sprite da informazioni su questa
+     */
+     spr_info frame;
   public:
     /**
      *  Costruttore imposta position a (x, y, w, h) e tutto il resto a NULL
@@ -99,7 +103,19 @@ protected:
     /**
      * Restituisce il vettore velocità (Point) dell'oggetto
      */
-     Point getObjVelocity();
+    Point getObjVelocity();
+    /**
+     * Inizializza un oggetto per renderlo animabile tramite gestione di frame
+     */
+    void beAnimable(int w, int h, int fxl);
+    /**
+     * Imposta il frame dell'animazione attuale a i
+     */
+    void setFrame(int i);
+    /**
+     * Restituisce il campo spr_info
+     */
+    spr_info getSpriteInfo();
 };
 
 #endif

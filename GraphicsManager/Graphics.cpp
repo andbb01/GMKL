@@ -41,11 +41,21 @@ SDL_Renderer *Graphics::externUpdate(){
 }
 
 void Graphics::drawObject(GameObject obj){
-    SDL_Rect tmp_pos;
+    spr_info sprite;
+    SDL_Rect tmp_pos, out_frm;
     tmp_pos = obj.getObjPosition().toSDL();
-    if (obj.getObjSprite() != NULL)
-      SDL_RenderCopyEx(ren, obj.getObjSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
-    else
+    sprite = obj.getSpriteInfo();
+    if (obj.getObjSprite() != NULL){
+      if (sprite.num_lin == 0)
+        SDL_RenderCopyEx(ren, obj.getObjSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
+      else{
+          out_frm.w = sprite.size.x;
+          out_frm.h = sprite.size.y;
+          out_frm.y = 0;
+          out_frm.x = (sprite.frame_num % sprite.fxl) * out_frm.w;
+          SDL_RenderCopyEx(ren, obj.getObjSprite(), &out_frm, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
+      }
+    } else
       SDL_RenderFillRect(this->ren, &tmp_pos);
 }
 

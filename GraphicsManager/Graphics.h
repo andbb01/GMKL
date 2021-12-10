@@ -59,7 +59,7 @@ class Graphics{
      */
     void drawRect(Rect r);
     /**
-     * Disegna un oggetto di tipo GameObject (o sottoclassi)
+     * Disegna un oggetto di tipo GameObject (o sottoclassi) (per oggetti animabili stampa solo srpites sulla prima linea)
      */
     void drawObject(GameObject obj);
     /**
@@ -71,7 +71,7 @@ class Graphics{
      */
     void setObjSprite(std::string fileName, GameObject *obj);
     /**
-     * Imposta la texture grafica di un oggetto di testo, permette di disegnare si il testo che lo sfondo (filename)
+     * Imposta la texture grafica di un oggetto di testo, permette di disegnare sia il testo che lo sfondo (filename)
      */
     void setObjSprite(std::string fileName, TextObject *obj);
     /**

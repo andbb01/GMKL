@@ -30,6 +30,16 @@ typedef SDL_Color Color;
 
 #define DEF_NEAR_DIST 10
 
+/**
+ * Struttura dati utilizzata per semplificare la gestione dei singoli frame in animazioni di oggetti 2d tramite spritesheet
+ */
+typedef struct sprInfo_s {
+    int frame_num; /** Frame attualmente in utilizzo */
+    Point size; /** Dimenzione dei frame */
+    int fxl; /** Frame per linea */
+    int num_lin; /** Numero di linee */
+}spr_info;
+
 #endif
 
 #define TYPES_CNTR 1

@@ -5,6 +5,7 @@ GameObject::GameObject(int x, int y, int w, int h){
   Rect tmp(x,y,w,h);
   this->position = tmp;
   this->tex = NULL;
+  this->frame.num_lin = 0;
 }
 
 GameObject::GameObject() : GameObject(0,0,0,0){}
@@ -81,4 +82,20 @@ void GameObject::setObjSize(int w, int h){
     
 Point GameObject::getObjVelocity(){
   return this->vel;
+}
+
+void GameObject::setFrame(int i){
+  this->frame.frame_num = i;
+}
+
+void GameObject::beAnimable(int w, int h, int fxl){
+  this->frame.frame_num = 0;
+  this->frame.size.x = w;
+  this->frame.size.y = h;
+  this->frame.fxl = fxl;
+  this->frame.num_lin = 1;
+}
+
+spr_info GameObject::getSpriteInfo(){
+  return this->frame;
 }

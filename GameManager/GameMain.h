@@ -20,25 +20,16 @@ namespace gameMain{
     void gameLoop();
     /**
      * @fn bool exitCondition();
-     * (In fase di test) Funzione per il controllo della condizione di uscita nel gameMain definire GAME_EXIT in fase di compilazione per utilizzare
-     * questa condizione automatica (in alternativa forzare l'uscita in gameLoop)
+     * (In fase di test) Funzione per il controllo della condizione di uscita nel gameMain
      */
-    #ifdef GAME_EXIT
-        bool exitCondition();
-    #endif
+    bool exitCondition();
 }
 
 int main(){
 
     gameMain::gameSetup();
 
-    while(
-        #ifdef GAME_EXIT
-            !gameMain::exitCondition()
-        #else
-            1
-        #endif
-        ){
+    while(!gameMain::exitCondition()){
         gameMain::gameLoop();
 
         WindowManager::updateEvent();
