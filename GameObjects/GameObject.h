@@ -113,6 +113,10 @@ protected:
      */
     void setFrame(int i);
     /**
+     * Imposta il flipping della texture dell'oggetto (comodo per rirpsrziare animazioni)
+     */
+    void setFlipping(int i);
+    /**
      * Restituisce il campo spr_info
      */
     spr_info getSpriteInfo();

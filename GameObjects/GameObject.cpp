@@ -94,8 +94,14 @@ void GameObject::beAnimable(int w, int h, int fxl){
   this->frame.size.y = h;
   this->frame.fxl = fxl;
   this->frame.num_lin = 1;
+  this->frame.flip_state = SDL_FLIP_NONE;
 }
 
 spr_info GameObject::getSpriteInfo(){
   return this->frame;
+}
+
+
+void GameObject::setFlipping(int i){
+  this->frame.flip_state = i;
 }

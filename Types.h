@@ -23,6 +23,10 @@ typedef SDL_Color Color;
 #define KEY_ENTER   SDL_SCANCODE_RETURN
 #define KEY_SPACE   SDL_SCANCODE_SPACE
 
+#define FLIP_NONE SDL_FLIP_NONE
+#define FLIP_HOR SDL_FLIP_HORIZONTAL
+#define FLIP_VER SDL_FLIP_VERTICAL
+
 #define MOUSE_RIGHT SDL_BUTTON_RMASK
 #define MOUSE_LEFT  SDL_BUTTON_LMASK
 #define MOUSE_MIDDLE SDL_BUTTON_MMASK
@@ -38,6 +42,7 @@ typedef struct sprInfo_s {
     Point size; /** Dimenzione dei frame */
     int fxl; /** Frame per linea */
     int num_lin; /** Numero di linee */
+    int flip_state;
 }spr_info;
 
 #endif
