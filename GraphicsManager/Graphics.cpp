@@ -125,8 +125,6 @@ void Graphics::setObjSprite(TextObject *obj){
   TTF_CloseFont(font);
 }
 
-Graphics::~Graphics(){
-  SDL_DestroyWindow(win);
-  SDL_DestroyRenderer(ren);
-  SDL_Quit();
+void Graphics::fulllScreen(bool state){
+  SDL_SetWindowFullscreen(win, state);
 }

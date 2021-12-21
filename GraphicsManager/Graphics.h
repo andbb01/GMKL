@@ -85,9 +85,9 @@ class Graphics{
      */
     SDL_Renderer *externUpdate();
     /**
-     * Elimina tutte le impostazioni grafiche per "liberare spazio in memoria"
+     * Imposta la finestra a schermo intero o non in funzione di state
      */
-    ~Graphics();
+    void fulllScreen(bool state);
 };
 
 #endif
