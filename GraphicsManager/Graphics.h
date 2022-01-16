@@ -88,6 +88,10 @@ class Graphics{
      * Imposta la finestra a schermo intero o non in funzione di state
      */
     void fulllScreen(bool state);
+    /**
+     * Restituisce la dimensione della finestra
+     */
+    Point windowSize();
 };
 
 #endif

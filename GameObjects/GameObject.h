@@ -120,6 +120,10 @@ protected:
      * Restituisce il campo spr_info
      */
     spr_info getSpriteInfo();
+    /**
+     * Imposta riga dell'animazione attuale
+     */
+    void setFrameLine(int i);
 };
 
 #endif

@@ -28,7 +28,7 @@ InfoGMKL:
 	wc $(GrM_H) $(GO_H) $(GM_H) $(H) $(BoBJ_H) $(PhY_H) $(GO) $(TXT) $(TXT_H) $(GrM) $(BoBJ) $(PhY)
 
 ClearCompilation:
-	rm *.o GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
+	rm *.o *.h.gch GraphicsManager/*.h.gch GameObjects/*.h.gch GameManager/*.h.gch GameMaker.h.gch BasicObjects/*.h.gch GameObjects/PhysicsObject/*.h.gch GameObjects/TextObject/*.h.gch
 
 All:
 	make CompileGMKL

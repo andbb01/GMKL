@@ -39,6 +39,7 @@ typedef SDL_Color Color;
  */
 typedef struct sprInfo_s {
     int frame_num; /** Frame attualmente in utilizzo */
+    int curr_lin; /** Linea attualmente in utilizzo */
     Point size; /** Dimenzione dei frame */
     int fxl; /** Frame per linea */
     int num_lin; /** Numero di linee */

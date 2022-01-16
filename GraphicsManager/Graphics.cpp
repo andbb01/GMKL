@@ -51,7 +51,7 @@ void Graphics::drawObject(GameObject obj){
       else{
           out_frm.w = sprite.size.x;
           out_frm.h = sprite.size.y;
-          out_frm.y = 0;
+          out_frm.y = sprite.curr_lin * out_frm.h;
           out_frm.x = (sprite.frame_num % sprite.fxl) * out_frm.w;
           SDL_RenderCopyEx(ren, obj.getObjSprite(), &out_frm, &tmp_pos, obj.getObjAngle(), NULL, (SDL_RendererFlip)sprite.flip_state);
       }
@@ -127,4 +127,10 @@ void Graphics::setObjSprite(TextObject *obj){
 
 void Graphics::fulllScreen(bool state){
   SDL_SetWindowFullscreen(win, state);
+}
+
+Point Graphics::windowSize(){
+  Point p;
+  SDL_GetWindowSize(win, &p.x, &p.y);
+  return p;
 }

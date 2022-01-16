@@ -105,3 +105,7 @@ spr_info GameObject::getSpriteInfo(){
 void GameObject::setFlipping(int i){
   this->frame.flip_state = i;
 }
+
+void GameObject::setFrameLine(int i){
+  this->frame.curr_lin = i;
+}
