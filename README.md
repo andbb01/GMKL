@@ -1,3 +1,4 @@
+![alt text](https://github.com/andbb01/GMKL/blob/main/GMKL_logo.png?ram=1)
 <h1>GMKL</h1>
 La Libreria GMKL è un insieme di classi e metodi necessari per la programmazione di videogiochi, in particolare si hanno classi per la gestione della grafica (Graphics), classi per la gestione degli oggetti di gioco (GamaObject, PgysicsObject e TextObject), classi per la gestione di input da periferiche (MouseManager, KayboardManager) e classi per la gestione generica di tutte le altre funzionalità che si potrebbero volere (audio, eventi della finestra, etc.)
 L'intera libreria si basa su <a href="https://www.libsdl.org/">SDL</a> (versione 2) e questa sarà necessaria in fase di compilazione (compreso linking della libreria).
