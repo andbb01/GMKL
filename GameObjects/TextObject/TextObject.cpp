@@ -33,3 +33,16 @@ void TextObject::setTxtColor(unsigned char r, unsigned char g, unsigned char b){
 Color TextObject::getColor(){
   return this->txtCol;
 }
+
+void TextObject::setTextBox(int x, int y){
+  int text_len;
+  this->textBox.v1.x = this->position.v1.x + x;
+  this->textBox.v1.y = this->position.v1.y + y;
+  this->textBox.h = font_size;
+  text_len = text.length();
+  this->textBox.w = font_size/2 * text_len;
+}
+
+Rect TextObject::getTextBox(){
+  return textBox;
+}

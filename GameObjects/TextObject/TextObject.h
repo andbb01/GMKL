@@ -26,16 +26,21 @@ class TextObject : public GameObject{
          */
         Color txtCol;
         /**
-         * Se l'oggetto viene usato come input box definisce se si è in fase di input o no
+         * Box dove viene scritto il testo
          */
-        bool onObj = false;
+        Rect textBox;
     public:
+        /**
+         * Altezza delle lettere in pixel
+         */
+        int font_size;
         /**
          * In fase di creazione si possono decidere dimensioni del box testo iniziale e font
          */
         TextObject(int x, int y, int w, int h,  std::string text, std::string fontName) : GameObject(x, y, w, h){
             this->text = text;
             this->fontName = fontName;
+            this->textBox = this->position;
         }
         /**
          * Se il font non è specificato viene inizializato a "fonts/arial.ttf" 
@@ -81,6 +86,15 @@ class TextObject : public GameObject{
          * Restituisce il colore del testo attualmente attivo sotto forma di struct Color
          */
         Color getColor();
+        /**
+         * Imposta l'attributo textBox (x e y posizione relativa)
+         */
+        void setTextBox(int x, int y);
+        /**
+         * Restituisce il campo textbox
+         */
+        Rect getTextBox();
+
 };
 
 #endif

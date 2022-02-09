@@ -60,9 +60,9 @@ void Graphics::drawObject(GameObject obj){
 }
 
  void Graphics::drawObject(TextObject obj){
-   this->drawObject((GameObject)obj);
+  this->drawObject((GameObject)obj);
   SDL_Rect tmp_pos;
-  tmp_pos = obj.getObjPosition().toSDL();
+  tmp_pos = obj.getTextBox().toSDL();
   SDL_RenderCopyEx(ren, obj.getObjFontSprite(), NULL, &tmp_pos, obj.getObjAngle(), NULL, SDL_FLIP_NONE);
 }
 
