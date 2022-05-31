@@ -34,10 +34,10 @@ Color TextObject::getColor(){
   return this->txtCol;
 }
 
-void TextObject::setTextBox(int x, int y){
+void TextObject::setPadding(int padding){
   int text_len;
-  this->textBox.v1.x = this->position.v1.x + x;
-  this->textBox.v1.y = this->position.v1.y + y;
+  this->textBox.v1.x = this->position.v1.x + padding;
+  this->textBox.v1.y = this->position.v1.y + padding;
   this->textBox.h = font_size;
   text_len = text.length();
   this->textBox.w = font_size/2 * text_len;

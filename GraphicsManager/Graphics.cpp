@@ -134,3 +134,7 @@ Point Graphics::windowSize(){
   SDL_GetWindowSize(win, &p.x, &p.y);
   return p;
 }
+
+void Graphics::removeBorder(){
+  SDL_SetWindowBordered(win, SDL_FALSE);
+}

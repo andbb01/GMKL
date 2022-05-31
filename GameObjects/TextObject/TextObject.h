@@ -87,9 +87,10 @@ class TextObject : public GameObject{
          */
         Color getColor();
         /**
-         * Imposta l'attributo textBox (x e y posizione relativa)
+         * Imposta la distanza tra i margini del box e il testo ed imposta la dimensione della casella 
+         * di testo
          */
-        void setTextBox(int x, int y);
+        void setPadding(int padding);
         /**
          * Restituisce il campo textbox
          */

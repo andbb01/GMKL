@@ -7,7 +7,6 @@ class GameObject;
 
 class Graphics{
   private:
-
     /**
      * Finestra della libreria SDL
      */
@@ -92,6 +91,10 @@ class Graphics{
      * Restituisce la dimensione della finestra
      */
     Point windowSize();
+    /**
+     * Rimuove i bordi della finestra
+     */
+    void removeBorder();
 };
 
 #endif
